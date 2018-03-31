@@ -11,16 +11,42 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <div class="container">     
-            <div class="row justify-content-center">
+        <div class="container">
 
-                <div class="d-flex flex-column">
+            <div class="row titre  d-inline-flex flex-column align-items-center">
+                <h1>Le Pendu</h1>
+                <br>
+                <button type="button" class="btn btn-outline-success" onclick="startGame()">Start</button>
+            </div>
 
-                    
+            <div class="game d-flex flex-row">     
+                
+                <div class="row">
+                    <div class="col config">
+                        <br>
+                        <div>
+                            <h3 class="info">Mot à trouver</h3>
+                            <h3 id="motAtrouver"></h3>
+                        </div>
+                        <br>
+                        <div>
+                            <h3 class="info">Entrez une lettre</h3>
+                            <input type="text" id="testLettre" maxlength="1" value="">
+                        </div>
+                        <br>
+                        <div>
+                            <h3 class="info">Lettres déjà tentées</h3>
+                            <h3 id="lettresPasOk">A, T, R</h3>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <canvas id="mon_canvas" width="500" height="500"></canvas>
                 </div>
             </div>
-        </div>
-        
+    </div>    
     </body>
     <script type="text/javascript" src="./script.js"></script>
+    <script type="text/javascript" src="./canvas.js"></script>
 </html>

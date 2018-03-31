@@ -1,17 +1,51 @@
 body{
-    background-color: whitesmoke;
+    background-color: rgb(240, 96, 96);
 }
-.hidden{
-    visibility: hidden;
+.row{
+    background-color: whitesmoke;
+    border: 2px solid rgb(13, 3, 24);
+    margin: 10px;
 }
 
-.exercice{
+.titre{
+    width: 1020px;
+    height: 150px; 
+}
+
+.titre, .config{
     text-align: center;
-    border: 2px solid blueviolet;
-    margin: 10px;
     padding: 10px;
 }
 
-button{
-    float:right;
+.titre > button {
+    max-width: 100px;
 }
+
+.game > * { 
+    width: 500px;
+    height: 500px;
+}
+
+.config > * > h3{
+    padding:5px;
+}
+.info{
+    font-style: italic;
+}
+
+#testLettre{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size:30px;
+    border: 2px solid red;
+}
+
+#lettresPasOk{
+    font-size: 28px;
+    /* text-decoration: line-through; */
+}
+
+
+
+
