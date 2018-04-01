@@ -98,12 +98,16 @@ inputLettre.addEventListener("keyup", function(event) {
 //Fonction test lettre
 function testLettre(lettre){
 
+    //Convertir la lettre si besoin
+    var checkedLetter = convertMyChar(lettre);
+    console.log(checkedLetter);
+
     //Verification si lettre déjà testée
     var flag = true;
 
     for(i = 0 ; i < listeLettres.length ; i++){
 
-        if(listeLettres[i] === lettre){
+        if(listeLettres[i] === checkedLetter){
 
             alert("Lettre déjà testée, faire un autre choix svp");
             flag = false;
@@ -122,10 +126,10 @@ function testLettre(lettre){
 
         for(i = 0 ; i < motATrouver.length ; i++){
 
-            if(motATrouver[i] === lettre){
+            if(motATrouver[i] === checkedLetter){
 
                 //Ajout de la lettre dans mot à afficher              
-                newMot += lettre;
+                newMot += checkedLetter;
 
                 //Changement de flag2
                 flag2 = false;
@@ -138,7 +142,7 @@ function testLettre(lettre){
         motEnCours = newMot;
 
         //Ajout de la lettre dans la liste des lettres téstées
-        listeLettres.push(lettre);
+        listeLettres.push(checkedLetter);
 
         showWord(motEnCours);
 
@@ -156,7 +160,6 @@ function testLettre(lettre){
 
 
 //Fonction verification fin de partie
-
 function checkEnd(){
 
     var endRow = document.getElementById("messageEnd");
@@ -165,7 +168,7 @@ function checkEnd(){
     if(motEnCours.indexOf("_") === -1){
         endRow.classList.remove("hidden"); //Affiche div
         endRow.childNodes[1].style.color = "green";
-        endRow.childNodes[1].innerHTML = "Victoire !!!"
+        endRow.childNodes[1].innerHTML = "Sauvé !!!"
         inputLettre.disabled = true; //Desactive
     
     }else if(compteur === 7){ //Defaite, le bonhomme est pendu
@@ -176,3 +179,60 @@ function checkEnd(){
     }
 
 }
+
+//Fonction convertissant majuscules et cractères spéciaux
+function convertMyChar(char) {
+
+    var listeChar = [
+                ["a","A"],
+                ["b","B"],
+                ["c","C"],
+                ["d","D"],
+                ["e","E"],
+                ["f","F"],
+                ["g","G"],
+                ["h","H"],
+                ["i","I"],
+                ["j","J"],
+                ["k","K"],
+                ["l","L"],
+                ["m","M"],
+                ["n","N"],
+                ["o","O"],
+                ["p","P"],
+                ["q","Q"],
+                ["r","R"],
+                ["s","S"],
+                ["t","T"],
+                ["u","U"],
+                ["v","V"],
+                ["w","W"],
+                ["x","X"],
+                ["y","Y"],
+                ["a","à"],
+                ["a","ä"],
+                ["a","â"],
+                ["e","é"],
+                ["e","è"],
+                ["e","ê"],
+                ["e","ë"],
+                ["i","ï"],
+                ["i","î"],
+                ["o","ö"],
+                ["o","ô"],
+                ["u","ü"],
+                ["u","ù"],
+                ["u","û"]
+            ];
+
+    for (var i = 0; i < listeChar.length; i++){
+
+        if (char === listeChar[i][1]) {
+            char = listeChar[i][0];
+            break;
+        }
+    }
+
+    return char;
+  }
+  

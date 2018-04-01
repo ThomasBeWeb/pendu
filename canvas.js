@@ -24,8 +24,8 @@ function gamePicture(index){
 
         case 1:
             //Tracé de la tête
-            context.beginPath(); //On démarre un nouveau tracé.
-            context.arc(320, 135, 35, 0, Math.PI*2); //On trace la courbe délimitant notre forme
+            context.beginPath();
+            context.arc(320, 135, 35, 0, Math.PI*2);
             context.stroke();
             context.closePath();
             break;
