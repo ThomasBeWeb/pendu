@@ -13,7 +13,7 @@
     <body>
         <div class="container">
 
-            <div class="row titre  d-inline-flex flex-column align-items-center">
+            <div class="row titre d-inline-flex flex-column align-items-center">
                 <h1>Le Pendu</h1>
                 <br>
                 <button type="button" class="btn btn-outline-success" onclick="startGame()">Start</button>
@@ -45,7 +45,11 @@
                     <canvas id="mon_canvas" width="500" height="500"></canvas>
                 </div>
             </div>
-    </div>    
+
+            <div class="row titre d-flex align-items-center justify-content-center hidden" id="messageEnd">
+                <h1></h1>
+            </div>
+        </div>    
     </body>
     <script type="text/javascript" src="./script.js"></script>
     <script type="text/javascript" src="./canvas.js"></script>

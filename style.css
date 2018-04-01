@@ -1,6 +1,11 @@
 body{
     background-color: rgb(240, 96, 96);
 }
+
+.hidden{
+    visibility: hidden;
+}
+
 .row{
     background-color: whitesmoke;
     border: 2px solid rgb(13, 3, 24);
@@ -43,7 +48,10 @@ body{
 
 #lettresPasOk{
     font-size: 28px;
-    /* text-decoration: line-through; */
+}
+
+#messageEnd > h1{
+    font-size: 80px;
 }
 
 
